@@ -75,13 +75,68 @@ Spend some more time trying out Voyant tools. Swap out the default windows for s
 
 If you'd like to get a flavour of how you can use a programming language can be used to analyse text, you have a couple of options. I've put together a very short demo of R in an interactive document called a 'notebook', here. 
 
-# Mapping
+This notebook loads in an interactive environment called Binder. Once the link above has loaded, you'll see an interactive document with instructions. 
 
-Step 1: Look at a pre-made map?
+A third option is to use a service called Constellate, run by the Journal database Jstor. This allows you to build and analyse a corpus of JStor articles, using search terms. They take some time to initialise, so for now it's best to use an existing one. 
 
-Step 2: Load a spatial dataset into Palladio
+First, go to https://constellate.org/ and click on 'dashboard' on the top-right. You have the option of building a new dataset or selecting a featured dataset. For now, try out one of the featured datasets. Click 'analyze', and you'll get a pop-up window containing links to a series of notebooks—interactive documents containing code and text. If you have never used Jupyter notebooks before, start with the first tutorial to learn how to use them - otherwise feel free to check out other ones more specific to text mining. 
 
-Step 3: Find a jupyter notebook
+After this workshop, I can recommend playing around with the corpus builder, which will construct a dataset suitable for text mining from a set of parameters and keywords.
+
+
+
+# Section 2: Mapping
+
+As with the above, here are three things to try out using maps, in order of difficulty. 
+
+## 1 - Find a map on David Rumsey
+
+Spatial Humanities isn't just about creating your own maps, but finding and (eventually) analysing existing, often historical ones. The site https://www.davidrumsey.com/ contains 1000s of historical maps which have mostly been 'geo-rectified', meaning that they have been fixed to modern coordinates. This means you can overlay over a modern map to look for changes over time. 
+
+We'll use the 'MapRankSearch' feature to find a map of interest. Open https://rumsey.mapranksearch.com/ in a browser
+
+![](dh_definitions_bot/Screen Shot 2021-05-21 at 12.27.40.png)
+
+As you scroll and zoom the map, search results on the right-hand side will reflect the area shown. You can also restrict the map dates using the slider underneath. Once you've found a map, click on it to open it in a picture viewer. Next, click 'View in Georeferencer' to open the map overlaid on a modern one. Use the slider at the top-right of this screen to turn the transparency of the old map up or down, revealing the modern map beneath.
+
+![](dh_definitions_bot/Screen Shot 2021-05-21 at 12.29.52.png)
+
+To go even further, you can compare multiple maps at once. CLick the 'overlay and compare' button in the bottom-right corner, which will open the map in Georeferencer.com: here you can add more maps to the interface and change the transparency of each one.
+
+![](dh_definitions_bot/Screen Shot 2021-05-21 at 12.32.12.png)
+Questions:
+
+
+## 2 - Plot some points in Palladio
+
+Many tasks using maps involve displaying some geographic data. To do this we can use a tool called Palladio, which was specifically made to work with humanities data. There are a number of very good tutorials for using Palladio, particularly https://miriamposner.com/blog/getting-started-with-palladio/ but in this short session we'll use the sample data to have a look around.
+
+First, go to http://hdlab.stanford.edu/palladio/ and click 'start'. This is where you can load your own data in .csv format (follow the tutorial above to learn how to structure it), or else click on the 'Try with sample data' link on the left hand side.
+
+The project view of Palladio will load up. The sample data is a small dataset of notable individuals, with their gender and places and dates of birth and death. Let's map all the birthplaces in the dataset. 
+
+Click on the map tab at the top of the screen:
+
+![](dh_definitions_bot/Screen Shot 2021-05-21 at 12.52.52.png)
+Next, create a 'layer', which will allow us to draw points of data on top of the map. Click 'new layer' and give it a name. 
+
+![](dh_definitions_bot/Screen Shot 2021-05-21 at 12.54.20.png)
+
+Next, tell Palladio which data to use to draw points on the map. Click on the 'Places' box which will give a drop-down of all the fields in the data with geographic coordinates. Click on the first one, 'Birthplace'.
+
+![](dh_definitions_bot/Screen Shot 2021-05-21 at 12.55.36.png)
+
+Last, we want to size the points by the number of people born in that place. Click on the size points tickbox, which will give you a couple of options for data to use for sizing. Leave it at the default, 'Number of People':
+
+![](dh_definitions_bot/Screen Shot 2021-05-21 at 12.56.43.png)
+Click 'Add layer' to create the points on your map. You've just created a basic interactive map, congratulations! You can move the map around by clicking and dragging, and hovering over a point will display the relevant data (in this case, the number of people born in that place)
+
+Some other things to try:
+
+Add another layer (place of death) and compare the two. 
+
+Try out the 'point to point' option, using both place of birth and place of death.
+3 - Use R to create a map
 
 # Network Analysis
 
