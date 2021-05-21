@@ -1,0 +1,92 @@
+---
+title: "Text Analysis"
+output: html_notebook
+---
+# Text Analysis with Voyant
+
+Voyant 
+Voyant-tools.org is a collection of text mining tools with a user interface. It's a great way in to text mining. 
+
+## Loading a text
+
+Open a browser and go to https://voyant-tools.org/
+
+![](dh_definitions_bot/Screenshot 2021-05-21 at 08.44.56.png)
+### Load a pre-existing text  
+
+The front page of Voyant allows you to add texts, either one or multiple. It also has a limited selection of texts pre-loaded, so if you would prefer to load one of these and just spend some time playing around with the interface, that is a good place to start. Click 'Open' and choose a corpus containing the entire works of either William Shakespeare or Jane Austen. If you do this, you can skip straight to the 'Voyant Interface' section below, if you like.
+
+### Loading your own text
+
+There are two ways to load your own text(s): either by entering a url to a document or by uploading a file from your own computer. We'll use plain text files (the type created by notepad or TextEdit), but you can also upload HTML, XML, and various others (see the [help file](https://voyant-tools.org/docs/#!/guide/corpuscreator-section-input-format) for more details).
+
+First we need some books in plain text format. [Project Gutenberg](https://www.gutenberg.org/) is a site containing a large database of freely-available ebooks, in a variety of formats. Let's make a corpus containing the four Sherlock Holmes novels. 
+
+First, open a new tab in your browser, and find the book you'd like to add on the site, using the search or browse function. The book page will allow you to download the eBook in a number of formats. Once you've found a book of interest, right click on the 'Plain Text UTF-8' link, and click 'copy the link address' (in Chrome):
+
+![](dh_definitions_bot/Screenshot 2021-05-21 at 09.06.56.png)
+Return to the Voyant-tools tab, and paste the link into the input box. Switch back to Project Gutenberg and find the other three novels and repeat the process. Copy over the links and put one on each line:
+
+![](dh_definitions_bot/Screenshot 2021-05-21 at 09.08.52.png)
+Click 'Reveal' to load the texts in Voyant.
+
+If you're not interested in literature, or if you have a set of documents from your own research you'd like to analyse, you can add text from any URL, or from your computer. There are many sources of text files available, although in many cases, you'll have to first download and unzip a set of files before uploading them. 
+
+Some to try include (however many of these are large files or require some additional steps, and might be best to try offline after the workshop):
+
+[The Oxford Text Archive](https://ota.bodleian.ox.ac.uk/)
+
+Follow the instructions here: https://glam-workbench.net/trove-harvester/ to bulk download text files from Australian historical newspapers.
+
+The Enron corpus (https://www.cs.cmu.edu/~enron/) if you are interested in more recent text for analysis.
+
+## Voyant Interface  
+
+Whether you loaded a pre-existing text, or added your own, you should now be presented with the following screen:
+
+![](dh_definitions_bot/Screenshot 2021-05-21 at 09.12.04.png)
+
+There's a lot going on here at first, so I'll break it down. The screen is divided into five separate panes: three at the top and two underneath, displaying a range of standard text mining tools. Voyant has many more tools available, and you can swap out the default ones for others. If you hover over the top-right of a pane, you'll see three new options. If you click on the windows icon (second from the left), you can select a new tool to replace the current one. You can do this for any of the windows. 
+
+The default tools are, clockwise from the top-left: 
+
+* A word cloud (and list of top terms). A word cloud displays the most frequent words in a corpus, sized by the number of occurences. It's a good way to get an overview of a particular text.
+* A reader with the full texts. 
+* A trends tool, displaying the frequency of either the five most-common words or a selected word.
+* A 'collocation' tool (displays a set number of words either side of a selected word)
+* A summary of the corpus. 
+
+
+Some of the windows have additional pages. Click on 'terms' in the word-cloud (top-left) and instead of a wordcloud you'll get a count of the occurences of the top terms. 
+
+The windows are connected to each other: for example, if you click on a word in the word cloud in the top-left window, you'll see the frequency of that word in the trends pane on the right. 
+
+One typical text mining question is to use what's known as the 'type-token ratio' to compare the writing style of a set of documents. It's the total number of *unique* words (known as types) divided  by the total number of words (tokens). The ratio of the two can be interpreted as the 'richness' of the vocabulary in a particular text.  
+
+To see this, click on the documents tab in the summary window (bottom-left by default)
+
+![](dh_definitions_bot/Screenshot 2021-05-21 at 09.41.43.png)
+
+We can see that there is some difference between the Sherlock Holmes novels (though we need to be careful with the interpretation: longer novels will naturally have a smaller ratio: it would be surprising if an author's use of unique words continued to increase as they wrote longer novels. The two final novels are a very similar length and most easily comparable, and they have very similar ratios).
+
+Spend some more time trying out Voyant tools. Swap out the default windows for some other ones, and note any interesting observations.
+
+# Text analysis with a coding language
+
+If you'd like to get a flavour of how you can use a programming language can be used to analyse text, you have a couple of options. I've put together a very short demo of R in an interactive document called a 'notebook', here. 
+
+# Mapping
+
+Step 1: Look at a pre-made map?
+
+Step 2: Load a spatial dataset into Palladio
+
+Step 3: Find a jupyter notebook
+
+# Network Analysis
+
+Step 1: Load network data into Palladio
+
+Step 2: Load network data into Network Navigator
+
+Step 3: R library with Network Analysis (or maybe Jupyter/Google collab)

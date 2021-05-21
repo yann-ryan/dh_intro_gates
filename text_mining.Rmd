@@ -1,0 +1,90 @@
+---
+title: "Text Mining with R"
+output: html_notebook
+---
+
+R is a programming language with a number of advanced packages for text mining. Unlike the previous tools, R requires you to use a 'command line interface', meaning you have to type code rather than use an graphical user interface. 
+
+This document won't teach you how to code, but it's intended to give you a flavour of the kind of things you can do with text and a progamming language. If you already know some R, then you can feel free to manipulate the examples in the code below. 
+
+A good place to start to learn R is the free book https://r4ds.had.co.nz/index.html, and if you want to learn how to use R for text mining specifically, https://www.tidytextmining.com/ is an excellent (also free) online book.
+
+This document you're reading is called an R Notebook: it's a special document which contains text *and* code. Anything within the gray block below is called a 'chunk'. On the right-hand side you'll see a little green triangle. Clicking that will run all the code in the chunk. 1 + 1 is very simple computer code which adds those two numbers together. Try clicking on the code. 
+
+```{r}
+1+1
+```
+
+R runs the code, and displays the output underneath the chunk 
+
+The programming language R is supplemented with what are known as *packages*. These are bundles of additional functions created by third-parties. Some are developed to do very specific tasks, and others are much more general. We need two to do text mining with R: ```tidyverse```, which is a huge collection of tools to generally extend the functionality of R, and ```tidytext```, which was developed specifically to work with text. You need to run the chunk below to load these packages (the functionality won't be available otherwise)
+
+```{r}
+library(tidyverse)
+library(tidytext)
+```
+
+Next we need some text. The easiest place to start is with the ```janeaustenr``` package. 
+
+```{r}
+library(janeaustenr)
+austen_books = janeaustenr::austen_books()
+```
+
+This code adds a line and chapter number to each of the books:
+
+```{r}
+original_books <- austen_books %>%
+  group_by(book) %>%
+  mutate(linenumber = row_number(),
+         chapter = cumsum(str_detect(text, 
+                                     regex("^chapter [\\divxlc]",
+                                           ignore_case = TRUE)))) %>%
+  ungroup()
+```
+
+Now that we have the text we can analyse it. First run a function called ```unnest_tokens```, which creates a dataset containing each word on a single line. We can then use R functions to sort and count the words:
+
+```{r}
+austen_tokens = original_books %>% unnest_tokens(word, text)
+
+```
+
+First, a simple count of the top words:
+
+```{r}
+austen_tokens %>% group_by(word) %>% tally() %>% arrange(desc(n)) %>% head(20)
+```
+Unsurprisingly they are all short function words like 'the', 'and' and so forth. We can remove these, and make a small chart of the results:
+
+```{r}
+data("stop_words")
+
+austen_tokens %>% 
+  anti_join(stop_words) %>% 
+  group_by(word) %>% 
+  tally() %>% 
+  arrange(desc(n)) %>% 
+  head(20) %>% 
+  ggplot() + 
+  geom_col(aes(x = reorder(word,n), y = n)) + 
+  coord_flip() + 
+  labs(title = "20 most frequent words in Jane Austen Novels")
+```
+We can also count the words per novel:
+
+```{r}
+austen_tokens %>% group_by(book) %>% tally(name = 'words') 
+```
+Or chart the appearance of a word in a single book. Try swapping out the book name or word name between the inverted commas below, to count other words.
+
+```{r}
+austen_tokens %>% 
+  filter(book == 'Pride & Prejudice') %>% 
+  filter(word == 'marriage') %>% 
+  group_by(chapter) %>% 
+  tally() %>% 
+  ggplot() + 
+  geom_col(aes(chapter, n))
+```
+

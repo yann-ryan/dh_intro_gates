@@ -1,0 +1,523 @@
+---
+title: "Introduction to Digital Humanities"
+author: "Yann Ryan"
+date: "19/05/2021"
+output: ioslides_presentation
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Workshop plan:
+
+-   Start by trying to define Digital Humanities (DH)
+
+-   We'll look at DH from the perspectives of data, analysis, and
+    engagement
+
+-   We'll take a look at three of the most common tools used for digital
+    humanities:
+
+    -   Text mining
+    -   Network analysis
+    -   Mapping
+
+-   I'll run through the key principles behind each one and give advice
+    on tools and methods
+
+-   We'll spend some time demo-ing easy-to-use tools designed to get you
+    started with no prior knowledge
+
+-   Slides are available on yann-ryan.github.io/dh_intro_slides
+
+# What is Digital Humanities?
+
+## What is Digital Humanities?
+
+-   A discipline which emerged from 'humanities computing', applying
+    computing techniques to humanities subjects. Digital humanities
+    reflects a change in focus: it is about using digital methods to ask
+    old questions in new ways, but also about applying humanities
+    thinking and skills to digital methods.
+
+From Wikipedia: The digital humanities, also known as humanities
+computing, is a field of study, research, teaching, and invention
+concerned with the intersection of computing and the disciplines of the
+humanities. It is methodological by nature and interdisciplinary in
+scope. It involves investigation, analysis, synthesis and presentation
+of information in electronic form. *It studies how these media affect
+the disciplines in which they are used, and what these disciplines have
+to contribute to our knowledge of computing.*
+
+## What is Digital Humanities?
+
+-   As many definitions as there are DH practitioners!
+    twitter.com/dhdefined
+
+![](dh_definitions_bot/Screenshot%202021-05-19%20at%2014.57.37.png)
+
+## What is Digital Humanities?
+
+![](dh_definitions_bot/Screenshot%202021-05-19%20at%2014.57.48.png)
+
+## What is Digital Humanities?
+
+![](dh_definitions_bot/Screenshot%202021-05-19%20at%2014.57.55.png)
+
+
+## What is Digital Humanities?
+
+![](dh_definitions_bot/Screenshot%202021-05-19%20at%2014.58.51.png)
+
+## What is Digital Humanities?
+
+![](dh_definitions_bot/Screenshot%202021-05-19%20at%2014.57.25.png)
+
+# Digital Humanities Disciplines
+
+## Computational Literary Studies
+
+-   'Text mining' works of literature to find patterns within individual
+    texts or changes in genres or authors over time
+-   For example this paper looking at the changes in readability scores
+    in the Harry Potter series, and what this says about the age of the
+    implied readership
+
+![](dh_definitions_bot/Screenshot%202021-05-19%20at%2015.10.12.png){width="500"}
+
+## Computational Literary Studies
+
+## Digital History
+
+Applying statistics or other quantitative methods to the study of the
+past:
+
+-   Looking at text: this paper which analysed 150 years of British
+    newspapers looking for changing patterns
+
+![](dh_definitions_bot/F3.large.jpg){width="362"}
+
+## Digital History
+
+-   Looking at other types of data, such as census records or port
+    books:
+
+![](dh_definitions_bot/Screenshot%202021-05-19%20at%2015.24.46.png){width="600"}
+
+## Digital History
+
+-   Using X-Ray scanning to read unopened letters -
+    <http://letterlocking.org/>
+
+![](dh_definitions_bot/2000.jpeg)
+
+## Many other areas
+
+-   Archaeology
+-   Gaming
+-   Digital resources are also considered digital humanities:
+-   Creating a digital 'edition' or a web resource for others to use.
+-   Digital exhibitions and virtual worlds
+
+# To do DH you need data...
+
+## Types of datasets
+
+-   Full-text datasets
+-   Metadata datasets (collections as data
+-   Image datasets
+
+## Text datasets
+
+-   A *corpus* is a collection of single *texts* or *documents.*
+
+-   Documents could be a book, a newspaper article, or a poem
+
+-   Range of *corpora* online
+
+    -   Project Gutenberg (<https://www.gutenberg.org/>) contains
+        thousands of free full-text out of copyright books
+    -   Google N-gram datasets
+        (<https://storage.googleapis.com/books/ngrams/books/datasetsv3.html>)
+    -   Hathi trust datasets (<https://www.hathitrust.org/datasets>
+    -   Library of Congress Newspapers - 'Chronicling America'
+        (<https://chroniclingamerica.loc.gov/>)
+    -   British Library: <https://data.bl.uk/bl_labs_datasets/>
+    -   National Library of Australia's Trove:
+        (<https://trove.nla.gov.au/>)
+    -   KB Netherlands Labs: <https://lab.kb.nl/datasets>
+    -   Constellate
+
+## Metadata datasets
+
+-   Cultural heritage datasets - eg newspaper title list
+-   Network datasets - <http://emlo.bodleian.ox.ac.uk/home>
+
+## Image datasets
+
+-   KB labs (<https://lab.kb.nl/datasets>)
+-   ImageNet (<https://www.image-net.org/>)
+-   British Library Flickr:
+    <https://www.flickr.com/photos/britishlibrary>
+
+## Creating your own
+
+-   Software to collect and organise data
+-   Zotero
+-   Omeka
+-   Recogito
+
+## Creating your own dataset: what to think about:
+
+-   What type of data is it? Is it structured or unstructured?
+-   What is the purpose?
+-   Who is the intended audience?
+-   Where is it going to live, particularly after the end of your
+    project?
+-   What would other researchers need to know to use it?
+-   Are there copyright or ethics issues?
+
+[breakout session here maybe? Discussion of datasets in groups maybe? Or
+maybe how they would turn their own work into data?]
+
+## Data cleaning
+
+-   Humanities datasets are often 'messy': spelling variations,
+    transcription errors, input errors can have serious effects on
+    resulting analysis
+-   Because of this most datasets need data 'cleaning' before they can
+    be used.
+-   not the best phrase because it implies something essential but
+    boring. Data cleaning can be a key aspect of a DH project
+-   There are a number of tools: excel, OpenRefine, R, Python, Regular
+    Expressions
+
+## Data cleaning
+
+-   OpenRefine (<https://openrefine.org/>) is probably the best tool for
+    dealing with 'messy' data
+-   R and Python both have advanced inbuilt tools for manipulating text
+-   Regular Expressions (<https://www.regular-expressions.info/>) are a
+    powerful tool for finding and replacing patterns in text
+
+![](dh_definitions_bot/Screenshot%202021-05-20%20at%2010.14.12.png)
+
+## Where to get help with other datasets
+
+-   British Library datasets: <https://data.bl.uk/bl_labs_datasets/>
+-   Github e.g: <https://github.com/awesomedata/awesome-public-datasets>
+-   Journal of Open Humanities data:
+    <https://openhumanitiesdata.metajnl.com/>
+
+# Digital Humanities Tools
+
+## Some common Digital Humanities Tools:
+
+-   Text mining
+-   Mapping
+-   Network analysis
+-   Data analysis & visualisation
+-   Machine learning
+-   Natural Language Processing
+-   Computer vision
+-   Virtual Reality/Augmented Reality
+
+## Networking Archives project
+
+-   Working on a project called *Networking Archives*, which is
+    assembling a dataset of c.450,000 letters in one place and using
+    them to write new histories of seventeenth century 'intelligencing'.
+-   We're using the data to understand the shape of the state archives,
+    uncover letters by spies, and map the geography of the news in 17th
+    century Britain.
+
+![](dh_definitions_bot/Screenshot%202021-05-19%20at%2015.37.15.png){width="600"}
+
+## Text mining
+
+-   Perhaps the most common digital humanities method?
+
+-   Many of the techniques taken from *information retrieval* and
+    *Natural Language Processing*
+
+-   Used primariy in the disciplines of literature and history
+
+-   Some of the most common techniques include:
+
+    -   Lexical analysis (analysing word frequencies in texts)
+    -   Sentiment analysis
+    -   Topic modelling
+    -   Natural Language Processing
+
+## Lexical analysis
+
+-   At it's most basic, counting the frequency of words in a text or
+    group of texts, and using that to understand patterns, often by
+    comparing to other groups of texts, or across time.
+-   Used to look for trends (Google N-gram viewer and the Early Print
+    N-Gram Browser
+
+![](dh_definitions_bot/Screenshot%202021-05-19%20at%2015.56.47.png)
+
+## Lexical analysis - Tools
+
+-   Voyant - (voyant-tools.org)
+-   Ant Conc (<https://www.laurenceanthony.net/software/antconc/>)
+-   CQP Web (<https://cqpweb.lancs.ac.uk/>)
+-   Programming language libaries such as R's tidytext, Python's NLTK
+
+## Sentiment Analysis
+
+-   Sentiment analysis looks for 'sentiment': trying to categorise a
+    piece of text as either 'positive' or 'negative', often by comparing
+    against a vocabulary of words which have been manually categorised
+    by volunteers.
+-   Can be difficult to use, particularly for historical texts
+-   Doesn't take account of the context of a word, or its change in use
+    over time
+
+## Sentiment Analysis - Tools
+
+-   Python: NLTK?
+-   R: tidytext
+
+## Topic modelling
+
+-   Topic modelling is the name for the technique of sorting documents
+    into 'topics'
+-   Essentially, an algorithm analyses an entire corpus and pulls out
+    'topics': collections of words which appear together. A second step
+    analyses each individual document in the corpus and ranks it
+    according to how much of each topic occurs in it.
+-   Topic modelling is 'unsupervised', which means the algorithm works
+    without any previous input or training.
+
+## Topic modelling
+
+-   For example <https://dsl.richmond.edu/dispatch/topics> which divided
+    a corpus of newspapers into 40 topics and looked at how the
+    proportion of each changed over time.
+
+![](dh_definitions_bot/Screenshot%202021-05-19%20at%2016.18.41.png){width="600"}
+
+## Topic Modelling - Tools
+
+-   MALLETT
+-   Zotero Paper Machines
+-   Programming languages
+
+## Natural Language Processing
+
+-   Related to some of the above, this is the name for a family of
+    techniques concerned with having computers understand, or parse,
+    human text or speech.
+-   Google Assistant and Siri, for example, use NLP techniques to
+    understand commands - parsing the meaning of particular words in
+    context. Language tranlations work in a similar way - it's not
+    enough to translate each word separately but the meaning needs to be
+    extracted.
+-   Much of the state of the art work here uses machine learning and
+    neural networks to parse text - training a neural network with a
+    large volume of text to detect something of interest (place names,
+    for example).
+
+## Natural Language Processing - Examples
+
+-   Named Entity Recognition: extracting structured information (people,
+    places, dates) from unstructured text.
+
+![](dh_definitions_bot/1_9ICjpdIPiocUWC5oF47duw.png){width="400"}
+
+## Natural Language Processing - Examples
+
+-   On the *Networking Archives* project we have used NER to extract
+    place names from the seventeenth century Calendars of State Papers,
+    and mapped the changing geography of news reports
+
+![](dh_definitions_bot/Screenshot%202021-05-20%20at%2011.12.07.png){width="310"}
+
+## Natural Language Processing - Tools and Resources
+
+-   Voyant Tools
+-   Stanford NLP
+-   NLTK
+-   SpaCy
+-   Tensorflow and Pytorch/Keras
+
+## Network Analysis
+
+-   Network analysis is a way of mathematically modelling the
+    relationship between things. It is formed from two basic parts: a
+    set of things, or entities, in network analysis-speak known as
+    *nodes*, and the links between them, known as edges.
+-   By mathematically modelling the resulting 'graph', we can learn more
+    about the flow of information in a particular system
+
+<center>
+
+![](dh_definitions_bot/Screenshot%202021-05-20%20at%2011.16.09.png){width="227"}
+
+</center>
+
+## Network Analysis
+
+-   For example, Ruth and Sebastian Ahnert used a measurement called
+    *betweenness centrality* to find what they called 'sustainers':
+    individuals in a network of underground Protestant dissenters who
+    didn't have the most connections, but who served as bridges in a
+    community. In a follow-up project they used clustering to uncover
+    overlooked spies, by comparing their network profile to known spies.
+-   Other projects have used network analysis to understand and uncover
+    the role of women in intellectual networks in the 17th century
+
+[does this come later?]
+
+## Network Analysis - how does it work?
+
+-   Networks are a way of abstracting phenomena or systems of knowledge
+    into an abstract framework. At its most basic a network is made up
+    of entities, which are described as nodes (or sometimes vertices),
+    and the connections between them, which are known as edges (or
+    sometimes arcs).
+-   This is often visualised as a network diagram, with nodes
+    represented by circles and the edges as lines between them.
+-   The resulting digital object is known as a graph, and it can be
+    mathematically analysed and understood
+-   Many applications of network analysis involve getting a series of
+    metrics, or measurements, about each node which tells us something
+    about its position in the system.
+
+## Network Analysis - degree
+
+-   The most basic of these is *degree*: simply a count of the incoming
+    and outgoing connections of a node.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(igraph)
+library(ggraph)
+library(tidygraph)
+read_delim('net.txt', delim = ',', col_names = F) %>%
+  distinct(X1, X2) %>% 
+  graph_from_data_frame(directed =T) %>% 
+  as_tbl_graph() %>%
+  mutate(degree = centrality_degree(mode = 'total')) %>% 
+  ggraph('stress') + 
+  geom_edge_link(alpha = .6) + 
+  geom_node_point(fill = 'white', pch = 21,  size =12, stroke = 1)  + 
+  geom_node_text(aes(label = name)) +
+  theme_void() + theme(legend.position = 'none') 
+```
+
+## Network Analysis - betweenness centrality
+
+-   For each pair of nodes, there is a 'shortest path' through the
+    network. This is the route from one to the other with the least
+    amount of 'hops'.
+-   Betweenness centrality is measured by counting up the number of
+    times each node is used in one of these shortest paths. Those with
+    high scores generally 'bridge' different parts of the network
+    together.
+
+## Network analysis - different types
+
+-   unimodal, bimodal etc
+-   different types of data that can be used in a network:
+    correspondence, text, different types of relations between things
+
+## Network Analysis - some cool projects
+
+-   Tudor Networks of Power
+
+## Network Analysis - Useful tools
+
+-   Palladio
+-   Gephi
+-   John Ladd's network tool
+-   Python, NetworkX
+-   R, tidygraph, ggraph, igraph
+
+## Mapping - 'Spatial Humanities'
+
+-   A wide range of applications:
+
+    -   Applying geospatial analysis to history, literature etc.
+    -   Analysing the changes in infrastructure by looking at roads on
+        maps
+    -   
+
+-   Also looking at word vectors - Anouk Lang's work
+
+## Spatial Humanities Projects
+
+-   Cameron Blevins,'Mining and Mapping the Production of Space'
+-   Looked for changes in place mentions in 19th century American
+    newspapers
+    (<https://web.stanford.edu/group/spatialhistory/cgi-bin/site/pub.php?id=93>)
+
+![](dh_definitions_bot/Screenshot%202021-05-20%20at%2018.04.49.png){width="766"}
+- Rachel's itinerary project - CESTA
+
+## Spatial Humanities Projects
+
+-   Viabundus
+
+## Projects - Mapping the Republic of Letters
+
+-   outline project
+
+## Projects - Geography of the Post
+
+![](dh_definitions_bot/Screenshot%202021-05-19%20at%2017.54.46.png){width="678"}
+
+## Different types of spatial data
+
+-   Most common are points, lines, polygons and rasters
+
+![](dh_definitions_bot/2019-points-lines-polygons.png)
+
+## Tools:
+
+-   Palladio
+-   GIS software like QGIS
+-   Again, R (sf) and Python!
+
+## Mapping - data needed
+
+-   First you need to gather coordinates (for point data). Each location
+    needs a latitude and longitude to be mapped
+-   This can be added manually or with a geocoding service or with
+    something like Geonames.
+-   You can then add additional data to the points - sizing by a
+    numerical value or colouring by category, for example
+
+
+
+## Resources
+
+[Breakout sessions - practical work]
+
+## Diving deeper into DH
+
+-   Data vs Capta
+-   Bias issues.
+-   What data are we using? Who created it?
+-   What parts of the world are represented?
+-   Using tools made for other purposes (catching spies etc)
+-   What is DH not good at? Quote data feminism and algorithms of
+    oppression?
+
+## Where to publish
+
+-   Range of journals. Is it better to publish in DH or general?
+-   Difference between the publishing model for science and humanities,
+    where does DH sit?
+
+## Where to get funding?
+
+-   Small projects
+-   Labs like KDL and DHI Sheffield
