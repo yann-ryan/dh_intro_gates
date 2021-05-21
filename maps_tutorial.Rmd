@@ -1,0 +1,59 @@
+---
+title: "Mapping with R"
+output: html_notebook
+---
+
+R has a couple of add-ons which allow for very advanced mapping and geo-spatial analysis. As with the previous notebook, it's not possible to teach the basic of coding in a very short space of time, so this is intended to give you a flavour of the look and feel of mapping with a programming language. Again, a good place to start to learn R is the free book https://r4ds.had.co.nz/index.html. https://r-spatial.org/r/2018/10/25/ggplot2-sf.html is a good basic tutorial for mapping with the package ```sf```, and the book https://geocompr.robinlovelace.net/ is an excellent place to learn more advanced mapping techniques.
+
+The first thing you need is some geographic data. This most often comes in the form of a spreadsheet containing rows with pieces of data (the name of a list of cities, and the population of each one, for example), and a set of geographic coordinates in latitude and longitude decimal places. if you don't have geographic coordinates, you can look them up for most places on Wikipedia. Click on the set of coordinates under the map for a place you have selected in Wikipedia. This will bring you to a page with a range of geographic information. You can copy the decimal latitude and longitude coordinates from the box in the top-right.
+
+Once you have this data in a spreadsheet, you can plot it with a data visualisation library in R. For more advanced use, you would generally turn the data into a geographic object, using a package called ```sf```. But we can use a more generic method for simple maps.
+
+First, load the sample spreadsheet of data. This is a sample of origins of 17th century letters, taken from Early Modern Letters Online:
+
+```{r}
+library(dplyr)
+library(readr)
+library(magrittr)
+library(ggplot2)
+
+letter_origins = read_csv('sample_letter_data.csv')
+```
+
+Now, use a plotting package called ```ggplot2``` to actually plot the results. This is a package often used for making data visualisations with R. Two chapters in the book referenced above, https://r4ds.had.co.nz/data-visualisation.html and https://r4ds.had.co.nz/graphics-for-communication.html are useful starting points for learning about ggplot2.
+
+First use ggplot to plot the coordinates:
+
+```{r}
+ggplot() + geom_point(data = letter_origins, aes(x = coordinates_longitude, y = coordinates_latitude))
+```
+
+As you can see, it doesn't look much like a map. We can add a background map:
+
+```{r}
+library(rnaturalearth)
+countries = rnaturalearth::ne_countries(scale = 'medium')
+
+ggplot() + geom_point(data = letter_origins, aes(x = coordinates_longitude, y = coordinates_latitude))
+  geom_sf(data = letter_origins_sf)
+```
+
+Restrict the view to Europe:
+
+```{r}
+ggplot() +
+  geom_polygon(data = countries, aes(x = long, y = lat, group = group), fill = 'gray80', color = 'gray80')+
+  geom_point(data = letter_origins, aes(x = coordinates_longitude, y = coordinates_latitude)) + 
+  coord_fixed(xlim = c(-10, 15), ylim = c(37, 60))
+```
+And finally, size the points by the number of letters sent from that place:
+
+```{r}
+ggplot() +
+  geom_polygon(data = countries, aes(x = long, y = lat, group = group), fill = 'gray80', color = 'gray80')+
+  geom_point(data = letter_origins, aes(x = coordinates_longitude, y = coordinates_latitude, size = n)) + 
+  coord_fixed(xlim = c(-10, 15), ylim = c(37, 60))
+```
+
+This is just a starting point. R and ggplot can be used to make very advanced and polished maps. See the resources above for more details!
+
