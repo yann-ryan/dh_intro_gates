@@ -1,6 +1,8 @@
 ---
 title: "Text Mining with R"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 R is a programming language with a number of advanced packages for text mining. Unlike the previous tools, R requires you to use a 'command line interface', meaning you have to type code rather than use an graphical user interface. 
@@ -20,8 +22,11 @@ R runs the code, and displays the output underneath the chunk
 The programming language R is supplemented with what are known as *packages*. These are bundles of additional functions created by third-parties. Some are developed to do very specific tasks, and others are much more general. We need two to do text mining with R: ```tidyverse```, which is a huge collection of tools to generally extend the functionality of R, and ```tidytext```, which was developed specifically to work with text. You need to run the chunk below to load these packages (the functionality won't be available otherwise)
 
 ```{r}
-library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(magrittr)
 library(tidytext)
+library(stringr)
 ```
 
 Next we need some text. The easiest place to start is with the ```janeaustenr``` package. 

@@ -1,0 +1,5 @@
+install.packages('dplyr')
+install.packages('ggplot2')
+install.packages('magrittr')
+install.packages('tidytext')
+install.packages('stringr')
