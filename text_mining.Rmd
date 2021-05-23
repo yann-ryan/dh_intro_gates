@@ -81,6 +81,7 @@ We can also count the words per novel:
 ```{r}
 austen_tokens %>% group_by(book) %>% tally(name = 'words') 
 ```
+
 Or chart the appearance of a word in a single book. Try swapping out the book name or word name between the inverted commas below, to count other words.
 
 ```{r}
