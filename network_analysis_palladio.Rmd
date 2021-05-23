@@ -17,7 +17,9 @@ There are a number of options for you to work with, from here. The aim is to giv
 
 3. Try out network analysis in a programming language, using a very simple interactive document. 
 
-The instructions for options 1 and 2 are contained within this page, but to use the interactive notebook, please 
+The instructions for options 1 and 2 are contained within this page, but to use the interactive notebook, you need to load an interactive environment called MyBinder. First, click here [give link to mybinder]
+
+
 
 There are a number of other tools which are very useful for doing network analysis, including Gephi, Nodegoat, and the Vistorian. 
 
