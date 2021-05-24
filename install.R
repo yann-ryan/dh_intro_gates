@@ -1,1 +1,1 @@
-install.packages(c('dplyr','ggplot2', 'magrittr', 'tidytext','readr','stringr','igraph','ggraph','tidygraph'))
+install.packages(c('dplyr','ggplot2', 'magrittr', 'tidytext','readr','stringr','igraph','ggraph','tidygraph', 'rnaturalearth'))
