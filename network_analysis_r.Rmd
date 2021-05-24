@@ -5,9 +5,23 @@ output:
     df_print: paged
 ---
 
-The Networking Archives project is using tools from other disciplines to write histories of seventeenth-century intelligencing and correspondence. Key in the toolset for the project is network analysis. Network analysis is a suite of tools developed to understand and analyse networks, specifically, network graphs, a formal term for a mathematical graph of entities, known as nodes, connected by vertices, or edges. Mostly they boil down to either specific software packages with a GUI, such as [Gephi](https://gephi.org/) or [Palladio](https://hdlab.stanford.edu/palladio/), or dedicated libraries within a coding language such as Python's [NetworkX](https://networkx.org/) or R's [Igraph](https://igraph.org/r/). 
+# Introduction  
 
-Using existing software is a great way to get started, but doing network analysis with a programming language is much more flexible, and, I would argue, a better investment of time because you'll inevitably learn transferable coding skills along the way. There are tonnes of free tools available for converting data into a network format. This blog post is an outline of my network analysis workflow using R. It's meant for anyone who either uses or intends to use the [programming language R](https://www.rstudio.com/) and the suite of tools called the [tidyverse](https://www.tidyverse.org/) for data science and would like to know what is (in my opinion) the easiest and most portable method for analysing networks. It's not a full tutorial: there are lots out there already (Jesse Sadler's [tutorial](https://www.jessesadler.com/post/network-analysis-with-r/) is excellent)
+R is a programming language with a number of advanced packages for text mining. Unlike the previous tools, R requires you to use a 'command line interface', meaning you have to type code rather than use an graphical user interface. 
+
+This document won't teach you how to code, but it's intended to give you a flavour of the kind of things you can do with text and a progamming language. If you already know some R, then you can feel free to manipulate the examples in the code below. 
+
+A good place to start to learn R is the free book https://r4ds.had.co.nz/index.html, and if you want to learn how to use R for text mining specifically, https://www.tidytextmining.com/ is an excellent (also free) online book.
+
+This document you're reading is called an R Notebook: it's a special document which contains text *and* code. Anything within the gray block below is called a 'chunk'. On the right-hand side you'll see a little green triangle. Clicking that will run all the code in the chunk. 1 + 1 is very simple computer code which adds those two numbers together. Try clicking on the code. 
+
+```{r}
+1+1
+```
+
+R runs the code, and displays the output underneath the chunk. This MyBinder R environment has loaded an individual 'container' for you to try out the code. Feel free to edit or add new code: no changes will be saved once we finish the session.
+
+# Constructing a Network in R  
 
 One of the easiest data formats to construct a network is an edge list: a simple dataframe with two columns, representing the connections between two nodes, one per row. It makes particular sense with correspondence data, which is often stored as a table of letters with a 'from' and a 'to'---more or less a ready-made edge list. In a correspondence dataset you might also have multiple sets of each of the edges (multiple letters between the same pair of individuals). You can add this to the edge list as an attribute called weight, which is simply another column.
 
@@ -160,4 +174,8 @@ sample_tbl_graph %>%
   geom_edge_link(alpha = .2)
 
 ```
+# Next Steps
+
+If you have any familiarity with R, feel free to try some more code in the interactive environment!
+
 

@@ -2,9 +2,11 @@
 title: "Introduction to Digital Humanities"
 author: "Yann Ryan"
 date: "19/05/2021"
-output: ioslides_presentation
-editor_options: 
-  markdown: 
+output:
+  ioslides_presentation: default
+  slidy_presentation: default
+editor_options:
+  markdown:
     wrap: 72
 ---
 
@@ -181,8 +183,13 @@ past:
 -   What would other researchers need to know to use it?
 -   Are there copyright or ethics issues?
 
-[breakout session here maybe? Discussion of datasets in groups maybe? Or
-maybe how they would turn their own work into data?]
+## Breakout Session 1:
+
+-   In small groups, discuss: do you consider your research 'data'?
+-   What would you need to do to turn your data into something you could use with DH? Think about:
+  -   Is it structured or unstructured?
+  -   Are there ethical or copyright concerns?
+  -   How would you use it?
 
 ## Data cleaning
 
@@ -499,7 +506,17 @@ read_delim('net.txt', delim = ',', col_names = F) %>%
 
 ## Resources
 
-[Breakout sessions - practical work]
+- Add resources?
+
+  ## Breakout Session 2 (30 minutes + 10 minutes feedback)
+
+  -   Open [give link]
+  -   Try out one or moree of the methods above thinking about:
+    -   How might you use this in your own research?
+    -   What kind of questions would this method allow you to ask of your data?
+    -   What steps would you need to take to get your own data into a form you could work with using these tools?
+    -   In what ways would this *not* be suitable for your own research?
+  -   We'll then spend 10 minutes discussing what you think of chosen method
 
 ## Diving deeper into DH
 

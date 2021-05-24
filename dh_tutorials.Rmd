@@ -1,0 +1,16 @@
+---
+title: "Digital Humanities Workshop Tutorials"
+output:
+  html_document:
+    df_print: paged
+---
+
+For this workshop I've put together a series of short tutorials, with varying levels of difficulty, based on three typical digital humanities techniques. 
+
+You won't have time to go through all of these today, but feel free to bookmark the page and return to them later! 
+
+If you'd like to try 'text mining', applying quantitative analysis to large datasets of text, click [here](https://yann-ryan.github.io/text_mining_voyant).
+
+If you'd like to try out mapping and spatial analysis, click [here](https://yann-ryan.github.io/maps_tutorial_gui).
+
+If you'd like to try out network analysis, click [here](https://yann-ryan.github.io/network_analysis_palladio).

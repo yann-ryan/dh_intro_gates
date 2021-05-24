@@ -17,8 +17,21 @@ There are a number of options for you to work with, from here. The aim is to giv
 
 3. Try out network analysis in a programming language, using a very simple interactive document. 
 
-The instructions for options 1 and 2 are contained within this page, but to use the interactive notebook, you need to load an interactive environment called MyBinder. First, click here [give link to mybinder]
+The instructions for options 1 and 2 are contained within this page, but to use the interactive notebook, you need to load an interactive environment called MyBinder. You can skip to the next section if you'd just like to get started with an easy-to-use web application.
 
+First, open the following in a new window: https://mybinder.org/v2/gh/yann-ryan/dh_intro_gates/main?urlpath=rstudio
+
+This will starting loading a new Binder instance - an interactive coding environment. it might take a minute or two (so it might be worth going through some of the tutorials below while you're waiting).
+
+Once it has finished, you should see this screen: 
+
+![](dh_definitions_bot/Screen Shot 2021-05-23 at 23.12.38.png)
+
+This is called R-Studio: an application designed for writing and running code. We're going to open a pre-made 'notebook'. The bottom-right pane contains a list of files. Look for one called 'network_analysis_r.Rmd' and click on it. It will open the notebook on the top-left pane.
+
+![](dh_definitions_bot/Screen Shot 2021-05-23 at 23.14.16.png)
+
+From here, follow the instructions in the notebook text. 
 
 
 There are a number of other tools which are very useful for doing network analysis, including Gephi, Nodegoat, and the Vistorian. 
@@ -27,15 +40,15 @@ There are a number of other tools which are very useful for doing network analys
 
 Palladio is a simple web application which allows you to upload your own network data and make some basic network visualisations. 
 
-Step 1: upload your network data
+### Step 1: upload your network data
 
 In order to make a network visualisation with Palladio, it needs a simple piece of data called an *edge list*. This is a spreadsheet listing all the connections between entities in your network. For this tutorial, we'll work with a very small sample of letters. Letters are sent between two people, so in order to create a network, we can represent the people as nodes, and the connection between them, through the action of sending a letter, as the edges. 
 
 An edge list is simply a list of the letters sent and received.
 
-First, go to http://hdlab.stanford.edu/palladio/ in your browser, and click on the 'start' button.
+First, go to http://hdlab.stanford.edu/palladio/ in your browser, and click on the 'start' button. You should now have this screen:
 
-![](dh_definitions_bot/Screen Shot 2021-05-23 at 18.06.57.png)
+![](dh_definitions_bot/Screen Shot 2021-05-24 at 09.59.48.png)
 
 The next page will present you with a few options for uploading your data to Palladio. We're going to copy and paste a list of authors and recipients of letters, separated by a comma.
 
@@ -46,17 +59,22 @@ You should see a simple text file. Select all the text in the window (click and 
 Return to the tab with Palladio open and paste the text into the text box under 'Load .csv or spreadsheet', and press the 'load' button underneath.
 
 ![](dh_definitions_bot/Screen Shot 2021-05-23 at 18.14.14.png)
+
+### Step 2: Create a basic network visualisation
+
 The Palladio app will load with your data. There are a few options here, but we're going to focus on the 'graph'. Click on the 'graph' tab at the top of the screen:
 
 ![](dh_definitions_bot/Screen Shot 2021-05-23 at 18.16.57.png)
 
-Click on the 'source' drop down, and select the 'author' option in the popup box:
+Click on the 'source' drop down, and select the 'author' option in the popup box, and close it:
 
 ![](dh_definitions_bot/Screen Shot 2021-05-23 at 18.18.01.png)
 
-Click on the 'target' dropdown and select the 'recipient' option in the popup. 
+Do the same for target: click on the 'target' dropdown and select the 'recipient' option in the popup. 
 
 You should now have a basic network visualisation, with the senders and recipients of letters visualised as circles, and the links between them as connecting lines. The algorithm to create the visualisation places highly-connected nodes at the centre, and less-well-connected ones at the periphery. It also groups connected nodes together. 
+
+![](dh_definitions_bot/Screen Shot 2021-05-24 at 10.04.20.png)
 
 Try out some the other options, and see if if you can figure out what they are doing to the visualisation.
 
@@ -84,3 +102,8 @@ The second statistic is known as *betweenness centrality*. This is a slightly mo
 
 To the right, you'll also see two more windows: first, some 'global metrics' which display some statistics on the network as a whole. Underneath this, a basic network visualisation. Which nodes might score highly by betweenness, looking at this diagram?
 
+## Things to think about:
+
+* How might you apply these techniques in your own research?
+* What would you need to do to get your data in the form of a network (note that networks are not necessarily between people)?
+* What are the pitfalls. Look, particularly, at the list of names and note that some are repeated or ambiguous. How might this affect your network analysis results, and what could you do to fix it?
