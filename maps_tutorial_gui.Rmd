@@ -4,76 +4,94 @@ output:
   html_document:
     df_print: paged
 ---
-# Mapping
+
 
 Another very set of digital humanities techniques are related to spatial data. The following are short tutorials to:
 
-1. Find and download historical maps
+1.  Find and download historical maps
 
-2. Load and visualise some spatial data with Palladio
+2.  Load and visualise some spatial data with Palladio
 
-3. Try out mapping in a programming language.
+3.  Try out mapping in a programming language.
 
-The instructions for options 1 and 2 are contained within this page, but to use the interactive notebook, you need to load an interactive environment called MyBinder. 
+## R-Studio and MyBinder (for those with some programming experience)
 
-First, open the following in a new window: https://mybinder.org/v2/gh/yann-ryan/dh_intro_gates/main?urlpath=rstudio
+The instructions for options 1 and 2 are contained within this page, but to use the interactive notebook, you need to load an interactive environment called MyBinder. If you don't have any coding experience or would prefer to get straight to the data, skip this step and move on to the [first section](#section1).
+
+First, open the following in a new window: <https://mybinder.org/v2/gh/yann-ryan/dh_intro_gates/main?urlpath=rstudio>
 
 This will starting loading a new Binder instance - an interactive coding environment. it might take a minute or two (so it might be worth going through some of the tutorials below while you're waiting).
 
-Once it has finished, you should see this screen: 
+Once it has finished, you should see this screen:
 
-![](dh_definitions_bot/Screen Shot 2021-05-23 at 23.12.38.png)
+![](dh_definitions_bot/Screen%20Shot%202021-05-23%20at%2023.12.38.png){width="800"}
 
 This is called R-Studio: an application designed for writing and running code. We're going to open a pre-made 'notebook'. The bottom-right pane contains a list of files. Look for one called 'maps_tutorial_r.Rmd' and click on it. It will open the notebook on the top-left pane.
 
-![](dh_definitions_bot/Screen Shot 2021-05-24 at 10.10.31.png)
+![](dh_definitions_bot/Screen%20Shot%202021-05-24%20at%2010.10.31.png){width="800"}
 
-## 1 - Find a map on David Rumsey
+From here, you can follow the instructions in the R-Studio notebook.
 
-Spatial Humanities isn't just about creating your own maps, but finding and (eventually) analysing existing, often historical ones. The site https://www.davidrumsey.com/ contains thousands of historical maps which have mostly been 'geo-rectified', meaning that they have been fixed to modern coordinates. This means you can overlay over a modern map to look for changes over time. 
+## 1 - Find a map on David Rumsey {#section1}
 
-We'll use the 'MapRankSearch' feature to find a map of interest. Open https://rumsey.mapranksearch.com/ in a browser
+Spatial Humanities isn't just about creating your own maps, but finding and (eventually) analysing existing, often historical ones. The site <https://www.davidrumsey.com/> contains thousands of historical maps which have mostly been 'geo-rectified', meaning that they have been fixed to modern coordinates. This means you can overlay over a modern map to look for changes over time.
 
-![](dh_definitions_bot/Screen Shot 2021-05-21 at 12.27.40.png)
+We'll use the 'MapRankSearch' feature to find a map of interest. Open <https://rumsey.mapranksearch.com/> in a browser
+
+![](dh_definitions_bot/Screen%20Shot%202021-05-21%20at%2012.27.40.png){width="800"}
 
 As you scroll and zoom the map, search results on the right-hand side will reflect the area shown. You can also restrict the map dates using the slider underneath. Once you've found a map, click on it to open it in a picture viewer. Next, click 'View in Georeferencer' to open the map overlaid on a modern one. Use the slider at the top-right of this screen to turn the transparency of the old map up or down, revealing the modern map beneath.
 
-![](dh_definitions_bot/Screen Shot 2021-05-21 at 12.29.52.png)
+![](dh_definitions_bot/Screen%20Shot%202021-05-21%20at%2012.29.52.png){width="800"}
 
 To go even further, you can compare multiple maps at once. CLick the 'overlay and compare' button in the bottom-right corner, which will open the map in Georeferencer.com: here you can add more maps to the interface and change the transparency of each one.
 
-![](dh_definitions_bot/Screen Shot 2021-05-21 at 12.32.12.png)
+![](dh_definitions_bot/Screen%20Shot%202021-05-21%20at%2012.32.12.png){width="800"}
+
+### Discussion points:
+
+-   What kind of questions might you ask by comparing historical maps?
 
 Continue adding and comparing historical maps, or move on to the next section.
 
 ## 2 - Plot some points in Palladio
 
-Many tasks using maps involve visualising some geographic data. To do this we can use a tool called Palladio, which was specifically made to work with humanities data. There are a number of very good tutorials for using Palladio, particularly https://miriamposner.com/blog/getting-started-with-palladio/ but in this short session we'll use the sample data to get a feel for the application.
+Many tasks using maps involve visualising some geographic data. To do this we can use a tool called Palladio, which was specifically made to work with humanities data. There are a number of very good tutorials for using Palladio, particularly <https://miriamposner.com/blog/getting-started-with-palladio/> but in this short session we'll use the sample data to get a feel for the application.
 
-First, go to http://hdlab.stanford.edu/palladio/ and click 'start'. This is where you can load your own data in .csv format (follow the tutorial above to learn how to structure it), or else click on the 'Try with sample data' link on the left hand side.
+First, go to <http://hdlab.stanford.edu/palladio/> and click 'start'. This is where you can load your own data in .csv format (follow the tutorial above to learn how to structure it), or else click on the 'Try with sample data' link on the left hand side.
 
-The project view of Palladio will load up. The sample data is a small dataset of notable individuals, with their gender and places and dates of birth and death. Let's map all the birthplaces in the dataset. 
+The project view of Palladio will load up. The sample data is a small dataset of notable individuals, with their gender and places and dates of birth and death. Let's map all the birthplaces in the dataset.
 
 Click on the map tab at the top of the screen:
 
-![](dh_definitions_bot/Screen Shot 2021-05-21 at 12.52.52.png)
-Next, create a 'layer', which will allow us to draw points of data on top of the map. Click 'new layer' and give it a name. 
+![](dh_definitions_bot/Screen%20Shot%202021-05-21%20at%2012.52.52.png){width="800"}
 
-![](dh_definitions_bot/Screen Shot 2021-05-21 at 12.54.20.png)
+Next, create a 'layer', which will allow us to draw points of data on top of the map. Click 'new layer' and give it a name.
+
+![](dh_definitions_bot/Screen%20Shot%202021-05-21%20at%2012.54.20.png)
 
 Next, tell Palladio which data to use to draw points on the map. Click on the 'Places' box which will give a drop-down of all the fields in the data with geographic coordinates. Click on the first one, 'Birthplace'.
 
-![](dh_definitions_bot/Screen Shot 2021-05-21 at 12.55.36.png)
+![](dh_definitions_bot/Screen%20Shot%202021-05-21%20at%2012.55.36.png)
 
 Last, we want to size the points by the number of people born in that place. Click on the size points tickbox, which will give you a couple of options for data to use for sizing. Leave it at the default, 'Number of People':
 
-![](dh_definitions_bot/Screen Shot 2021-05-21 at 12.56.43.png)
+![](dh_definitions_bot/Screen%20Shot%202021-05-21%20at%2012.56.43.png)
+
 Click 'Add layer' to create the points on your map. You've just created a basic interactive map, congratulations! You can move the map around by clicking and dragging, and hovering over a point will display the relevant data (in this case, the number of people born in that place)
 
-Some other things to try:
+![](dh_definitions_bot/Screen%20Shot%202021-05-24%20at%2010.23.16.png){width="800"}
 
-Add another layer (place of death) and compare the two. 
+## Some other things to try:
+
+Add another layer (place of death) and compare the two.
 
 Try out the 'point to point' option, using both place of birth and place of death.
 
+Try out the 'timeline' and 'timespan' options at the bottom of the map screen.
 
+### Discussion points:
+
+-   Is there anything in your own research data which could be represented geographically, and what do you think it would tell you?
+
+-   What do maps like this reveal/hide?

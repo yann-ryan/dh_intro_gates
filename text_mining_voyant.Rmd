@@ -13,7 +13,9 @@ The first technique we're going to try out is text mining. This is the name for 
 2. Try out *Constellate*, a tool from JSTOR which allows you to create and analyse a custom corpus of journal articles using Python. Constellate contains some very good Python tutorials, but you'll need to work with it after this session to get the most out of it.
 3. Try out text mining with the programming language R, using a very short demo interactive document. 
 
-The instructions for options 1 and 2 are contained within this page, but to use the interactive notebook, you need to load an interactive environment called MyBinder. You can skip this section if you would prefer to stick to tools with a user-interface.
+## R-Studio and MyBinder (for those with some programming experience)  
+
+The instructions for options 1 and 2 are contained within this page, but to use the interactive notebook, you need to load an interactive environment called MyBinder. If you don't have any coding experience or would prefer to get straight to the data, skip this step and move on to the [first section](#section1).
 
 First, open the following in a new window: https://mybinder.org/v2/gh/yann-ryan/dh_intro_gates/main?urlpath=rstudio
 
@@ -25,7 +27,7 @@ Once it has finished, you should see this screen:
 
 This is called R-Studio: an application designed for writing and running code. We're going to open a pre-made 'notebook'. The bottom-right pane contains a list of files. Look for one called 'text_mining.Rmd' and click on it. It will open the notebook on the top-left pane.
 
-# Text Analysis with Voyant
+# Text Analysis with Voyant {#section1}
 
 Voyant-tools.org is a collection of text mining tools with a graphical user interface, meaning you don't need any coding experience to get started. It's a really useful way in to text mining, with a variety of typical text mining tools plus some more experimental ones. 
 

@@ -17,7 +17,9 @@ There are a number of options for you to work with, from here. The aim is to giv
 
 3. Try out network analysis in a programming language, using a very simple interactive document. 
 
-The instructions for options 1 and 2 are contained within this page, but to use the interactive notebook, you need to load an interactive environment called MyBinder. You can skip to the next section if you'd just like to get started with an easy-to-use web application.
+## R-Studio and MyBinder (for those with some programming experience)  
+
+The instructions for options 1 and 2 are contained within this page, but to use the interactive notebook, you need to load an interactive environment called MyBinder. If you don't have any coding experience or would prefer to get straight to the data, skip this step and move on to the [first section](#section1).
 
 First, open the following in a new window: https://mybinder.org/v2/gh/yann-ryan/dh_intro_gates/main?urlpath=rstudio
 
@@ -36,7 +38,7 @@ From here, follow the instructions in the notebook text.
 
 There are a number of other tools which are very useful for doing network analysis, including Gephi, Nodegoat, and the Vistorian. 
 
-# Network visualisation with Palladio  
+# Network visualisation with Palladio  {#section1}
 
 Palladio is a simple web application which allows you to upload your own network data and make some basic network visualisations. 
 
